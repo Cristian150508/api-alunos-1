@@ -21,7 +21,7 @@ public class AlunoServiceTest {
     @Test
     void deveCadastrarAlunoQuandoDadosForemValidos() {
 
-        //Arrange
+        // Arrange
         //service = new AlunoService();
 
          AlunoRequest request = new AlunoRequest("Cristian",

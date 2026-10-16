@@ -2,6 +2,7 @@ package com.tamasia.api_alunos.service;
 
 import com.tamasia.api_alunos.DTO.AlunoRequest;
 import com.tamasia.api_alunos.DTO.AlunoResponse;
+import com.tamasia.api_alunos.exception.AlunoNaoEncontradoException;
 import com.tamasia.api_alunos.exception.EmailCadastradoException;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -48,5 +49,13 @@ public class AlunoServiceTest {
         //Act
         Assertions.assertThatThrownBy(() -> service.cadastrarAluno(request2)).isInstanceOf(EmailCadastradoException.class)
                 .hasMessage("Email já cadastrado");
+    }
+    //listar alunos e nao tem aluno
+    @Test
+    void deveReceberExcecaoQuandoAlunoNaoEncontrado(){
+
+        int idInexistente = 300;
+        Assertions.assertThatThrownBy(() -> service.obterAlunoPorId(idInexistente)).isInstanceOf(AlunoNaoEncontradoException.class)
+                .hasMessage("Aluno não encontrado");
     }
 }

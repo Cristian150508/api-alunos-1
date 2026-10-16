@@ -36,7 +36,7 @@ public class AlunoServiceTest {
         Assertions.assertThat(response).isNotNull();
         Assertions.assertThat(response.getId()).isGreaterThan(0);
     }
-
+    
     @Test
     void deveReceberExecaoQuandoEmailRepetidoNaRequisicao() {
 
@@ -50,7 +50,7 @@ public class AlunoServiceTest {
         Assertions.assertThatThrownBy(() -> service.cadastrarAluno(request2)).isInstanceOf(EmailCadastradoException.class)
                 .hasMessage("Email já cadastrado");
     }
-    //listar alunos e nao tem aluno
+
     @Test
     void deveReceberExcecaoQuandoAlunoNaoEncontrado(){
 

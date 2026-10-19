@@ -36,7 +36,7 @@ public class AlunoServiceTest {
         Assertions.assertThat(response).isNotNull();
         Assertions.assertThat(response.getId()).isGreaterThan(0);
     }
-    
+
     @Test
     void deveReceberExecaoQuandoEmailRepetidoNaRequisicao() {
 
